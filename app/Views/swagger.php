@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>API Documentation</title>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.18.3/swagger-ui.css">
     <style>
         html {
             box-sizing: border-box;
@@ -21,16 +21,20 @@
             margin: 0;
             background: #fafafa;
         }
+
+        .swagger-ui .topbar {
+            background-color: #1a237e;
+        }
     </style>
 </head>
 <body>
     <div id="swagger-ui"></div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui-bundle.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui-standalone-preset.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.18.3/swagger-ui-bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.18.3/swagger-ui-standalone-preset.js"></script>
     <script>
         window.onload = function() {
             const ui = SwaggerUIBundle({
-                url: window.location.protocol + '//' + window.location.host + '/swagger.json',
+                url: "/swagger.json",
                 dom_id: '#swagger-ui',
                 deepLinking: true,
                 presets: [
