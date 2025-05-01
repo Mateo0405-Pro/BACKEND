@@ -42,24 +42,26 @@ class Logger extends BaseConfig
 
     /**
      * --------------------------------------------------------------------------
+     * Custom Logger Class
+     * --------------------------------------------------------------------------
+     *
+     * The class name to use for logging:
+     *
+     * @var string
+     */
+    public string $loggerClass = CustomLogger::class;
+
+    /**
+     * --------------------------------------------------------------------------
      * Date Format for Logs
      * --------------------------------------------------------------------------
      *
      * Each item that is logged has an associated date. You can use PHP date
      * codes to set your own date formatting
-     */
-    public string $dateFormat = 'Y-m-d H:i:s';
-
-    /**
-     * --------------------------------------------------------------------------
-     * Logger Class
-     * --------------------------------------------------------------------------
-     *
-     * The logger class to use.
      *
      * @var string
      */
-    public $loggerClass = CustomLogger::class;
+    public string $dateFormat = 'Y-m-d H:i:s';
 
     /**
      * --------------------------------------------------------------------------

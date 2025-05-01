@@ -4,17 +4,18 @@ namespace App\Libraries;
 
 use CodeIgniter\Log\Logger;
 use Psr\Log\LoggerInterface;
-use Stringable;
 
 class CustomLogger extends Logger implements LoggerInterface
 {
     /**
      * System is unusable.
      *
-     * @param string|Stringable $message
+     * @param string|\Stringable $message
      * @param array $context
+     *
+     * @return void
      */
-    public function emergency(string|Stringable $message, array $context = []): void
+    public function emergency($message, array $context = []): void
     {
         $this->log('emergency', $message, $context);
     }
@@ -22,10 +23,12 @@ class CustomLogger extends Logger implements LoggerInterface
     /**
      * Action must be taken immediately.
      *
-     * @param string|Stringable $message
+     * @param string|\Stringable $message
      * @param array $context
+     *
+     * @return void
      */
-    public function alert(string|Stringable $message, array $context = []): void
+    public function alert($message, array $context = []): void
     {
         $this->log('alert', $message, $context);
     }
@@ -33,10 +36,12 @@ class CustomLogger extends Logger implements LoggerInterface
     /**
      * Critical conditions.
      *
-     * @param string|Stringable $message
+     * @param string|\Stringable $message
      * @param array $context
+     *
+     * @return void
      */
-    public function critical(string|Stringable $message, array $context = []): void
+    public function critical($message, array $context = []): void
     {
         $this->log('critical', $message, $context);
     }
@@ -45,10 +50,12 @@ class CustomLogger extends Logger implements LoggerInterface
      * Runtime errors that do not require immediate action but should typically
      * be logged and monitored.
      *
-     * @param string|Stringable $message
+     * @param string|\Stringable $message
      * @param array $context
+     *
+     * @return void
      */
-    public function error(string|Stringable $message, array $context = []): void
+    public function error($message, array $context = []): void
     {
         $this->log('error', $message, $context);
     }
@@ -56,10 +63,12 @@ class CustomLogger extends Logger implements LoggerInterface
     /**
      * Exceptional occurrences that are not errors.
      *
-     * @param string|Stringable $message
+     * @param string|\Stringable $message
      * @param array $context
+     *
+     * @return void
      */
-    public function warning(string|Stringable $message, array $context = []): void
+    public function warning($message, array $context = []): void
     {
         $this->log('warning', $message, $context);
     }
@@ -67,10 +76,12 @@ class CustomLogger extends Logger implements LoggerInterface
     /**
      * Normal but significant events.
      *
-     * @param string|Stringable $message
+     * @param string|\Stringable $message
      * @param array $context
+     *
+     * @return void
      */
-    public function notice(string|Stringable $message, array $context = []): void
+    public function notice($message, array $context = []): void
     {
         $this->log('notice', $message, $context);
     }
@@ -78,10 +89,12 @@ class CustomLogger extends Logger implements LoggerInterface
     /**
      * Interesting events.
      *
-     * @param string|Stringable $message
+     * @param string|\Stringable $message
      * @param array $context
+     *
+     * @return void
      */
-    public function info(string|Stringable $message, array $context = []): void
+    public function info($message, array $context = []): void
     {
         $this->log('info', $message, $context);
     }
@@ -89,10 +102,12 @@ class CustomLogger extends Logger implements LoggerInterface
     /**
      * Detailed debug information.
      *
-     * @param string|Stringable $message
+     * @param string|\Stringable $message
      * @param array $context
+     *
+     * @return void
      */
-    public function debug(string|Stringable $message, array $context = []): void
+    public function debug($message, array $context = []): void
     {
         $this->log('debug', $message, $context);
     }
@@ -101,10 +116,10 @@ class CustomLogger extends Logger implements LoggerInterface
      * Logs with an arbitrary level.
      *
      * @param mixed $level
-     * @param string|Stringable $message
+     * @param string|\Stringable $message
      * @param array $context
      */
-    public function log($level, string|Stringable $message, array $context = []): void
+    public function log($level, string|\Stringable $message, array $context = []): void
     {
         parent::log($level, $message, $context);
     }
