@@ -17,48 +17,34 @@ class CreateUsuariosTable extends Migration
             ],
             'nombre' => [
                 'type' => 'VARCHAR',
-                'constraint' => 100,
+                'constraint' => 50,
             ],
-            'apellido' => [
-                'type' => 'VARCHAR',
-                'constraint' => 100,
-            ],
-            'fecha_nacimiento' => [
-                'type' => 'DATE',
-                'null' => true,
-            ],
-            'genero' => [
-                'type' => 'CHAR',
-                'constraint' => 1,
-                'null' => true,
-            ],
-            'correo' => [
+            'email' => [
                 'type' => 'VARCHAR',
                 'constraint' => 100,
                 'unique' => true,
             ],
-            'telefono' => [
-                'type' => 'VARCHAR',
-                'constraint' => 20,
-                'null' => true,
-            ],
-            'contrasena' => [
+            'password' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
-            'rol_id' => [
+            'password_strength' => [
                 'type' => 'INT',
-                'constraint' => 11,
-                'unsigned' => true,
+                'constraint' => 3,
+                'null' => true,
+                'comment' => 'Puntuación de fortaleza de la contraseña (0-100)',
             ],
-            'fecha_registro' => [
+            'created_at' => [
                 'type' => 'DATETIME',
-                'null' => false,
+                'null' => true,
+            ],
+            'updated_at' => [
+                'type' => 'DATETIME',
+                'null' => true,
             ],
         ]);
 
         $this->forge->addKey('id', true);
-        $this->forge->addKey('correo', false, true); // Unique key
         $this->forge->createTable('tbl_usuarios');
     }
 
